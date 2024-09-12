@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('ano');
             $table->string('categoria',255);
             $table->string('capa',255)->nullable()->default(null);
-            $table->string('link',255);
+            $table->string('link_trailer',255);
         });
     }
 

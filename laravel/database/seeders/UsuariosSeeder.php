@@ -14,6 +14,13 @@ class UsuariosSeeder extends Seeder
      */
     public function run(): void
     {
+        Usuario::create([
+            'name' => 'User1',
+            'email' => 'usuario1@example.com',
+            'username' => 'usuario1',
+            'password' => bcrypt('edu123'),
+            'admin' => true,  // ou false
+        ]);
         Usuario::factory()->count(10)->create();
     }
 }
