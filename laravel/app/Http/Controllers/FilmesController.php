@@ -16,9 +16,6 @@ class FilmesController extends Controller
         ]);
     }
 
-    public function galeria(){
-        return view('galeria.index');
-    }
     public function cadastrar()
     {
         return view('filmes.cadastrar');
@@ -83,6 +80,27 @@ class FilmesController extends Controller
         $filme->delete();
         return redirect()->route('filmes')->with('sucesso', 'Filme excluído com sucesso!');
     }
+    
+    public function galeria(Request $request){
 
+        $query = Filme::query();
+        
+        if ($request->filled('ano')) {
+            $query->whereYear('ano', $request->ano);
+        }
+    
+        if ($request->filled('categoria')) {
+            $query->where('categoria', $request->categoria);
+        }
+    
+        $dados = $query->get();
+        
+        return view('filmes.galeria', ['filmes' => $dados]);
+    }
+    
+    
 
+public function detalhes(Filme $filme){
+    return view('filmes.detalhes', ['filme' => $filme]);
+}
 }

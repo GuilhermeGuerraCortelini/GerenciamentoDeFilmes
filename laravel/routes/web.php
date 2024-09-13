@@ -18,9 +18,8 @@ Route::post('/filmes/cadastrar', [FilmesController::class, 'gravar'])->name('fil
 Route::get('/filmes/apagar/{filme}', [FilmesController::class, 'apagar'])->name('filmes.apagar');
 Route::get('/filmes/{filme}/editar', [FilmesController::class, 'editar'])->name('filmes.editar');
 Route::put('/filmes/{filme}', [FilmesController::class, 'atualizar'])->name('filmes.atualizar');
-
-Route::get('/galerias', [FilmesController::class,'index'])->name('galerias');
-
+Route::get('/galeria', [FilmesController::class, 'galeria'])->name('filmes.galeria');
+Route::get('/filmes/{filme}/detalhes', [FilmesController::class, 'detalhes'])->name('filmes.detalhes');
 Route::get('login', [UsuariosController::class, 'login'])->name('login');
 
 Route::post('login', [UsuariosController::class, 'login']);
