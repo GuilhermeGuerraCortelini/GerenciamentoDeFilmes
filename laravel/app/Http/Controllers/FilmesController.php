@@ -16,6 +16,9 @@ class FilmesController extends Controller
         ]);
     }
 
+    public function galeria(){
+        return view('galeria.index');
+    }
     public function cadastrar()
     {
         return view('filmes.cadastrar');

@@ -19,6 +19,8 @@ Route::get('/filmes/apagar/{filme}', [FilmesController::class, 'apagar'])->name(
 Route::get('/filmes/{filme}/editar', [FilmesController::class, 'editar'])->name('filmes.editar');
 Route::put('/filmes/{filme}', [FilmesController::class, 'atualizar'])->name('filmes.atualizar');
 
+Route::get('/galerias', [FilmesController::class,'index'])->name('galerias');
+
 Route::get('login', [UsuariosController::class, 'login'])->name('login');
 
 Route::post('login', [UsuariosController::class, 'login']);
